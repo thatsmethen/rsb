@@ -1,8 +1,8 @@
-import { Meta, Story, Canvas, ArgsTable } from '@storybook/addon-docs/blocks';
+import { Meta, Canvas, Story, ArgsTable } from '@storybook/addon-docs/blocks';
 import { KouiCard } from './KouiCard';
 import * as CardStories from './KouiCard.stories';
 
-<Meta title="Components/Card" component={KouiCard} parameters={{ component: KouiCard, layout: 'centered', subcomponents: { CardStories } }} />
+<Meta title="Components/Card" component={KouiCard} parameters={{ layout: 'centered', subcomponents: { CardStories } }} />
 
 The `Card` component is one of the most versatile components for displaying different types of information in a neat, clear format — it can contain text, links, images, and even other components.
 
@@ -10,7 +10,7 @@ Cards serve as an entry point to more detailed information. They present the use
 
 ## Properties
 
-<ArgsTable of={CardStories.Default} />
+<ArgsTable for={CardStories.Default} />
 
 ## Usage
 
@@ -28,7 +28,7 @@ Cards are made up of several different elements, all of which are optional:
 The component provides sensible defaults to make usage as simple as possible. By default, the card is of medium size and filled style.
 
 <Canvas>
-  <Story of={CardStories.Default} />
+  <Story name={CardStories.Default.name} of={CardStories.Default} />
 </Canvas>
 
 ### Extra Small, Small, Large and Extra Large
@@ -36,10 +36,10 @@ The component provides sensible defaults to make usage as simple as possible. By
 You can choose different sizes of the card depending on the information you wish to display. The available sizes are: 'xs', 'sm', 'md', 'lg', 'xl'. Here are examples for extra small, small, large and extra large sizes.
 
 <Canvas>
-  <Story of={CardStories.ExtraSmall} />
-  <Story of={CardStories.Small} />
-  <Story of={CardStories.Large} />
-  <Story of={CardStories.ExtraLarge} />
+  <Story name={CardStories.ExtraSmall.name} of={CardStories.ExtraSmall} />
+  <Story name={CardStories.Small.name} of={CardStories.Small} />
+  <Story name={CardStories.Large.name} of={CardStories.Large} />
+  <Story name={CardStories.ExtraLarge.name} of={CardStories.ExtraLarge} />
 </Canvas>
 
 ### Filled and Outlined
@@ -47,8 +47,8 @@ You can choose different sizes of the card depending on the information you wish
 Cards are filled by default. But you can also choose an outlined style, if it suits your design better.
 
 <Canvas>
-  <Story of={CardStories.Filled} />
-  <Story of={CardStories.Outlined} />
+  <Story name={CardStories.Filled.name} of={CardStories.Filled} />
+  <Story name={CardStories.Outlined.name} of={CardStories.Outlined} />
 </Canvas>
 
 ### Card with Image
@@ -56,7 +56,7 @@ Cards are filled by default. But you can also choose an outlined style, if it su
 The Card component can also display an image. To do this, pass the image URL to the `image` prop. Here's an example:
 
 <Canvas>
-  <Story of={CardStories.WithImage} />
+  <Story name={CardStories.WithImage.name} of={CardStories.WithImage} />
 </Canvas>
 
 ### Custom Background Color
@@ -64,7 +64,7 @@ The Card component can also display an image. To do this, pass the image URL to 
 You can also choose a custom background color for your card. Pass the color value to the `backgroundColor` prop.
 
 <Canvas>
-  <Story of={CardStories.WithCustomBackground} />
+  <Story name={CardStories.WithImage.name} of={CardStories.WithCustomBackground} />
 </Canvas>
 
 ### Clickable
@@ -72,7 +72,7 @@ You can also choose a custom background color for your card. Pass the color valu
 Cards can be clickable, activating an action or navigation when the user interacts with them. Just pass a function to the `onClick` prop.
 
 <Canvas>
-  <Story of={CardStories.Clickable} />
+  <Story name={CardStories.Clickable.name} of={CardStories.Clickable} />
 </Canvas>
 
 With these options, the `Card` component gives you a lot of flexibility to adapt its appearance and behavior to suit your needs. Enjoy using it!
