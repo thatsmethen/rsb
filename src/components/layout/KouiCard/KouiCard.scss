@@ -1,0 +1,32 @@
+koui-card {
+  background: white;
+
+  $border-multiplier: 4px;
+  $shadow-blur-multiplier: 5px;
+  $shadow-spread-multiplier: 2px;
+  $shadow-color: rgba(0,0,0,0.5);
+
+  .koui-card__inner {
+    &--border-xs { border-radius: 1 * $border-multiplier; }
+    &--border-sm { border-radius: 2 * $border-multiplier; }
+    &--border-md { border-radius: 3 * $border-multiplier; }
+    &--border-lg { border-radius: 4 * $border-multiplier; }
+    &--border-xl { border-radius: 5 * $border-multiplier; }
+
+    &--border-color-black { border-color: black; }
+    &--border-color-red { border-color: red; }
+    &--border-color-blue { border-color: blue; }
+    &--border-color-green { border-color: green; }
+
+    &--shadow-sm { box-shadow: 0 0 $shadow-blur-multiplier * 1 $shadow-spread-multiplier * 1 $shadow-color; }
+    &--shadow-md { box-shadow: 0 0 $shadow-blur-multiplier * 2 $shadow-spread-multiplier * 2 $shadow-color; }
+    &--shadow-lg { box-shadow: 0 0 $shadow-blur-multiplier * 3 $shadow-spread-multiplier * 3 $shadow-color; }
+
+    &--background-white { background-color: white; }
+    &--background-red { background-color: red; }
+    &--background-blue { background-color: blue; }
+    &--background-green { background-color: green; }
+
+    &--dark { background-color: black; color: white; }
+  }
+}
