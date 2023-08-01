@@ -1,46 +1,39 @@
-# Getting Started with Create React App
+# Koui - Example Component Library
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+Welcome to Koui, a React Component Library for building beautiful and robust web applications. 
 
-## Available Scripts
+Designed with maximum flexibility and ease-of-use in mind.
 
-In the project directory, you can run:
+## Key Features
 
-### `npm start`
+- **Comprehensive**: A wide array of components ranging from basic building blocks to complex structures.
+- **Customizable**: Easy-to-use APIs to customize components according to your design requirements.
+- **Accessible**: Built with accessibility in mind, helping to make your web project usable by everyone.
+- **High Quality**: Rigorously tested to ensure top-tier performance.
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+## Documentation
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
+Detailed documentation, interactive examples, and configuration options are available at our [Storybook site](https://github.io/thatsmethen/rsb).
 
-### `npm test`
+## Development
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+To install and run Koui, clone this repo and then use the following command(s):
 
-### `npm run build`
+```bash
+npm install && npm run build
+```
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+## Storybook
+To run Storybook locally, follow the above and then use the following command:
+```bash
+npm run storybook
+```
+A browser should open and navigate you to http://localhost:6006
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+## Contributing
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+We welcome any contributions to improve the library. Please see our [contributing guide](https://github.com/thatsmethen/rsb/blob/main/CONTRIBUTING.md) for more information.
 
-### `npm run eject`
+## License
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
-
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
-
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
+Koui is licensed under the MIT License - see the [LICENSE.md](https://github.com/thatsmethen/rsb/blob/main/LICENSE) file for details.
