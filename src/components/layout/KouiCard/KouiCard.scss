@@ -13,10 +13,12 @@ $spacing-scale: (
 
 $border-radius-scale: (
   'none': 0,
+  'xs': 0.1rem,
   'sm': 0.25rem,
   'DEFAULT': 0.5rem,
   'md': 0.75rem,
   'lg': 1rem,
+  'xl': 1.25rem,
   'full': 9999px,
 );
 
@@ -60,6 +62,18 @@ $opacity-color-palette: (
     border-radius: map-get($border-radius-scale, 'DEFAULT');
   }
 
+  &--border {
+    @each $size, $value in $border-radius-scale {
+      &-#{$size} {
+        border-radius: $value;
+
+        img {
+          border-radius: $value;
+        }
+      }
+    }
+  }
+
   &--outlined {
     border: 1px solid map-get($color-palette, 'grey');
   }
@@ -67,13 +81,8 @@ $opacity-color-palette: (
   &--clickable {
     cursor: pointer;
     &:hover {
-      box-shadow: 0px 3px 10px rgba(0, 0, 0, 0.1);
+      box-shadow: 0 3px 10px rgba(0, 0, 0, 0.1);
     }
-  }
-
-  &--dark {
-    background-color: map-get($color-palette, 'dark-grey');
-    color: map-get($color-palette, 'white');
   }
 
   &--border-color {
@@ -100,6 +109,9 @@ $opacity-color-palette: (
     @each $color, $hex in $color-palette {
       &-#{$color} {
         background-color: $hex;
+        &.koui-card--dark {
+          color: map-get($color-palette, 'white');
+        }
       }
     }
   }
