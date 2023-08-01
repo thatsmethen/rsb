@@ -13,7 +13,7 @@ Designed with maximum flexibility and ease-of-use in mind.
 
 ## Documentation
 
-Detailed documentation, interactive examples, and configuration options are available at our [Storybook site](https://github.io/thatsmethen/rsb).
+Detailed documentation, interactive examples, and configuration options are available at our [Storybook site](https://thatsmethen.github.io/rsb/).
 
 ## Development
 
