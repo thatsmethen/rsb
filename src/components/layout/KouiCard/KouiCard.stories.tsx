@@ -38,8 +38,8 @@ export default {
 const TemplateFactory = (title: string, content: string) => {
   const Template: Story<StoryArgs> = args => (
     <KouiCard {...args}>
-      {title && <h2 style={{ margin: 2 }}>{title}</h2>}
-      {content && <p style={{ margin: 2 }}>{content}</p>}
+      {title && <h2>{title}</h2>}
+      {content && <p>{content}</p>}
     </KouiCard>
   );
   return Template;
