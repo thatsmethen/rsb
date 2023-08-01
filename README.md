@@ -4,7 +4,7 @@ Welcome to RSB, a React Component Library for building beautiful and robust web 
 
 ## Documentation
 
-Detailed documentation, interactive examples, and configuration options are available at our [Storybook site](https://github.io/thatsmethen/rsb).
+Detailed documentation, interactive examples, and configuration options are available at our [Storybook site](https://thatsmethen.github.io/rsb/).
 
 ## Development
 
