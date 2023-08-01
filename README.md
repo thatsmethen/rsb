@@ -1,15 +1,6 @@
-# Koui - Example Component Library
+# RSB - React + Storybook
 
-Welcome to Koui, a React Component Library for building beautiful and robust web applications. 
-
-Designed with maximum flexibility and ease-of-use in mind.
-
-## Key Features
-
-- **Comprehensive**: A wide array of components ranging from basic building blocks to complex structures.
-- **Customizable**: Easy-to-use APIs to customize components according to your design requirements.
-- **Accessible**: Built with accessibility in mind, helping to make your web project usable by everyone.
-- **High Quality**: Rigorously tested to ensure top-tier performance.
+Welcome to RSB, a React Component Library for building beautiful and robust web applications. 
 
 ## Documentation
 
@@ -17,7 +8,7 @@ Detailed documentation, interactive examples, and configuration options are avai
 
 ## Development
 
-To install and run Koui, clone this repo and then use the following command(s):
+To install and run Rsb, clone this repo and then use the following command(s):
 
 ```bash
 npm install && npm run build
@@ -36,4 +27,4 @@ We welcome any contributions to improve the library. Please see our [contributin
 
 ## License
 
-Koui is licensed under the MIT License - see the [LICENSE.md](https://github.com/thatsmethen/rsb/blob/main/LICENSE) file for details.
+Rsb is licensed under the MIT License - see the [LICENSE.md](https://github.com/thatsmethen/rsb/blob/main/LICENSE) file for details.

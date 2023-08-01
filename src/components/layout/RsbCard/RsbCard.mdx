@@ -1,0 +1,73 @@
+import { Meta, Canvas, Story, ArgTypes } from '@storybook/blocks';
+import * as CardStories from './RsbCard.stories';
+
+<Meta title="Components/Card" of={CardStories} parameters={{ layout: 'centered', subcomponents: { CardStories } }} />
+
+# Card
+
+The `Card` component is one of the most versatile components for displaying different types of information in a neat, clear format — it can contain text, links, images, and even other components.
+
+Cards serve as an entry point to more detailed information. They present the user with options and give a summary of the information that's available, allowing users to decide what pieces of content they're interested in before going any further.
+
+## Properties
+
+<ArgTypes for={CardStories.Playground} />
+
+## Usage
+
+Cards are made up of several different elements, all of which are optional:
+
+- **Background Color**: Allows customisation of the card's background color. You can select from the predefined color palette options: 'blue', 'green', 'red', 'white', 'black', 'grey', 'dark-grey', 'light-grey', and 'yellow'.
+
+- **Border Radius**: Adjusts the roundness of the card's corners. Different values such as 'none', 'sm', 'DEFAULT', 'md', 'lg', and 'full' can be selected.
+
+- **Border Color**: Lets you customise the card's border color.
+
+- **Shadow**: Sets a shadow for the card which can be adjusted according to different levels: 'sm', 'md', and 'lg'.
+
+- **Shadow Opacity**: Adjusts the opacity of the shadow for the card. You can provide a numeric value to set the shadow's opacity.
+
+- **Image**: Cards can include images. You can provide a source URL string for the image.
+
+- **Outlined**: An outlined card has a border. It can be set to true or false.
+
+- **Dark Mode**: Cards can be displayed in dark mode, which simply changes the text to white. Set the `dark` prop to `true` for dark mode.
+
+- **Clickable**: Cards can be made clickable. You can provide an `onClick` handler function for the click event.
+
+Remember, all these options are optional and can be combined to create diverse and customised cards according to your needs.
+
+### Filled and Outlined
+
+Cards are filled by default. But you can also choose an outlined style, if it suits your design better.
+
+<Canvas>
+  <Story of={CardStories.Filled} />
+  <Story of={CardStories.Outlined} />
+</Canvas>
+
+### Card with Image
+
+The Card component can also display an image. To do this, pass the image URL to the `image` prop. Here's an example:
+
+<Canvas>
+  <Story of={CardStories.WithImage} />
+</Canvas>
+
+### Custom Background Color
+
+You can also choose a custom background color for your card. Pass the color value to the `backgroundColor` prop.
+
+<Canvas>
+  <Story of={CardStories.WithCustomBackground} />
+</Canvas>
+
+### Clickable
+
+Cards can be clickable, activating an action or navigation when the user interacts with them. Just pass a function to the `onClick` prop.
+
+<Canvas>
+  <Story of={CardStories.Clickable} />
+</Canvas>
+
+With these options, the `Card` component gives you a lot of flexibility to adapt its appearance and behavior to suit your needs. Enjoy using it!
