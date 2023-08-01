@@ -1,66 +1,49 @@
-// Card.stories.tsx
-
 import type { Meta, StoryObj } from '@storybook/react';
+import { ReactElement } from 'react';
 import { KouiCard, KouiCardProps } from './KouiCard';
 
 export default {
-  component: KouiCard,
   title: 'Components/Card',
+  component: KouiCard,
   argTypes: {
-    backgroundColor: { control: 'color' },
+    backgroundColor: { control: 'color', description: 'Background color for the card' },
+    borderRadius: { control: 'text', description: 'Border radius for the card' },
+    borderColor: { control: 'color', description: 'Border color for the card' },
+    shadow: { control: 'text', description: 'Shadow for the card' },
+    shadowOpacity: { control: 'number', description: 'Shadow opacity for the card' },
+    image: { control: 'input', description: 'Image for the card' },
+    outlined: { control: 'boolean', description: 'Outline style for the card', defaultValue: false },
+    dark: { control: 'boolean', description: 'Dark mode for the card', defaultValue: false },
   },
 } as Meta;
 
-type Story = StoryObj<KouiCardProps>;
+type StoryArgs = KouiCardProps & { title: string; content: string };
 
-export const Default: Story = {
+const Template: ({ title, content, ...args }: StoryArgs) => ReactElement = ({ title, content, ...args }: StoryArgs) => (
+  <KouiCard {...args}>
+    <h2>{title}</h2>
+    <p>{content}</p>
+  </KouiCard>
+);
+
+export const Playground: StoryObj<StoryArgs> = {
+  ...Template,
   args: {
-    title: 'Default Card',
-    content: 'This is the default card.',
+    title: 'Playground Card',
+    content: 'This is the playground card.',
+    backgroundColor: '#FFFFFF',
+    borderRadius: 'md',
+    borderColor: '#000000',
+    shadow: 'md',
+    shadowOpacity: 0.5,
+    image: 'https://placekitten.com/200/300',
+    outlined: false,
+    dark: false,
   },
 };
 
-export const ExtraSmall: Story = {
-  args: {
-    title: 'Extra Small Card',
-    content: 'This is an extra small sized card.',
-    size: 'xs',
-  },
-};
-
-export const Small: Story = {
-  args: {
-    title: 'Small Card',
-    content: 'This is a small sized card.',
-    size: 'sm',
-  },
-};
-
-export const Medium: Story = {
-  args: {
-    title: 'Medium Card',
-    content: 'This is a medium sized card.',
-    size: 'md',
-  },
-};
-
-export const Large: Story = {
-  args: {
-    title: 'Large Card',
-    content: 'This is a large sized card.',
-    size: 'lg',
-  },
-};
-
-export const ExtraLarge: Story = {
-  args: {
-    title: 'Extra Large Card',
-    content: 'This is an extra large sized card.',
-    size: 'xl',
-  },
-};
-
-export const Filled: Story = {
+export const Filled: StoryObj<StoryArgs> = {
+  ...Template,
   args: {
     title: 'Filled Card',
     content: 'This is a filled card.',
@@ -68,7 +51,8 @@ export const Filled: Story = {
   },
 };
 
-export const Outlined: Story = {
+export const Outlined: StoryObj<StoryArgs> = {
+  ...Template,
   args: {
     title: 'Outlined Card',
     content: 'This is an outlined card.',
@@ -76,7 +60,8 @@ export const Outlined: Story = {
   },
 };
 
-export const WithImage: Story = {
+export const WithImage: StoryObj<StoryArgs> = {
+  ...Template,
   args: {
     title: 'Card with Image',
     content: 'This card has an image.',
@@ -84,7 +69,8 @@ export const WithImage: Story = {
   },
 };
 
-export const WithCustomBackground: Story = {
+export const WithCustomBackground: StoryObj<StoryArgs> = {
+  ...Template,
   args: {
     title: 'Card with Custom Background',
     content: 'This card has a custom background color.',
@@ -92,10 +78,11 @@ export const WithCustomBackground: Story = {
   },
 };
 
-export const Clickable: Story = {
+export const Clickable: StoryObj<StoryArgs> = {
+  ...Template,
   args: {
     title: 'Clickable Card',
-    content: 'This card has a click handler. Check the actions tab in the addon panel for logs when it is clicked.',
+    content: 'This card is clickable.',
     onClick: () => console.log('Card clicked!'),
   },
 };

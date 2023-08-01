@@ -1,18 +1,23 @@
-import React, { ReactNode } from 'react';
+import React, { MouseEventHandler } from 'react';
 import classNames from 'classnames';
 import './KouiCard.scss';
 
 type BorderSize = 'xs' | 'sm' | 'md' | 'lg' | 'xl';
 type ShadowSize = 'sm' | 'md' | 'lg';
 
-type KouiCardProps = {
+export type KouiCardProps = {
   borderRadius?: BorderSize;
   borderColor?: string;
   shadow?: ShadowSize;
   shadowOpacity?: number;
   backgroundColor?: string;
+  onClick?: MouseEventHandler<HTMLDivElement>;
+  image?: string;
+  outlined?: boolean;
+  title?: string;
+  content?: string;
   dark?: boolean;
-  children?: ReactNode;
+  children?: any;
 };
 
 export const KouiCard: React.FC<KouiCardProps> = ({
@@ -21,18 +26,28 @@ export const KouiCard: React.FC<KouiCardProps> = ({
   shadow = 'md',
   shadowOpacity = 0.5,
   backgroundColor = 'white',
+  image,
+  outlined = false,
+  onClick,
   dark = false,
   children,
 }) => {
   const cardClass = classNames(
-    'koui-card__inner',
-    `koui-card__inner--border-${borderRadius}`,
-    `koui-card__inner--border-color-${borderColor}`,
-    `koui-card__inner--shadow-${shadow}`,
-    `koui-card__inner--shadow-opacity-${shadowOpacity}`,
-    `koui-card__inner--background-${backgroundColor}`,
-    { 'koui-card__inner--dark': dark },
+    'koui-card',
+    `koui-card--border-${borderRadius}`,
+    `koui-card--border-color-${borderColor}`,
+    `koui-card--shadow-${shadow}`,
+    `koui-card--shadow-opacity-${shadowOpacity}`,
+    `koui-card--background-${backgroundColor}`,
+    { 'koui-card--dark': dark },
+    { 'koui-card--outlined': outlined },
+    { 'koui-card--clickable': onClick },
   );
 
-  return <div className={cardClass}>{children}</div>;
+  return (
+    <div className={cardClass} onClick={onClick}>
+      {image && <img src={image} alt={'Placeholder'} />}
+      {children && <span>{children}</span>}
+    </div>
+  );
 };
