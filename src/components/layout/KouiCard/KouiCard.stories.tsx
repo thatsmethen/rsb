@@ -17,12 +17,20 @@ export default {
       control: { type: 'select', options: ['blue', 'green', 'red', 'white', 'black', 'grey', 'dark-grey', 'light-grey', 'yellow'] },
       description: 'Background color for the card',
     },
-    borderRadius: { control: { type: 'select', options: ['xs', 'sm', 'md', 'lg', 'xl'] }, description: 'Border radius for the card', defaultValue: 'md' },
-    borderColor: { control: 'color', description: 'Border color for the card' },
+    borderRadius: {
+      control: { type: 'select', options: ['xs', 'sm', 'md', 'lg', 'xl'] },
+      description: 'Border radius for the card',
+      defaultValue: 'md',
+    },
+    borderColor: {
+      control: { type: 'select', options: ['blue', 'green', 'red', 'white', 'black', 'grey', 'dark-grey', 'light-grey', 'yellow'] },
+      defaultValue: 'light-grey',
+      description: 'Border color for the card',
+    },
     shadow: { control: 'text', description: 'Shadow for the card' },
     shadowOpacity: { control: 'number', description: 'Shadow opacity for the card' },
-    image: { control: 'string', description: 'Image for the card', defaultValue: null },
-    outlined: { control: 'boolean', description: 'Outline style for the card', defaultValue: false },
+    image: { control: 'text', description: 'Image for the card', defaultValue: '' },
+    outlined: { control: 'boolean', description: 'Outline style for the card', defaultValue: true },
     dark: { control: 'boolean', description: 'Dark mode for the card (changes text to white)', defaultValue: false },
   },
 } as Meta;
@@ -41,11 +49,11 @@ export const Playground = TemplateFactory('Default Card', 'This is the default c
 Playground.args = {
   backgroundColor: 'white',
   borderRadius: 'md',
-  borderColor: '#000000',
+  borderColor: 'light-grey',
   shadow: 'md',
   shadowOpacity: 0.5,
   image: 'https://placekitten.com/300/120',
-  outlined: false,
+  outlined: true,
   dark: false,
 };
 

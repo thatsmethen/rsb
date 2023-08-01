@@ -8,7 +8,7 @@ type BackgroundColor = 'blue' | 'green' | 'red' | 'white' | 'black' | 'grey' | '
 
 export type KouiCardProps = {
   borderRadius?: BorderSize;
-  borderColor?: string;
+  borderColor?: BackgroundColor;
   shadow?: ShadowSize;
   shadowOpacity?: number;
   backgroundColor?: BackgroundColor;
