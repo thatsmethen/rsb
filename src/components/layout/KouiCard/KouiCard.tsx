@@ -1,4 +1,4 @@
-import React, { MouseEventHandler } from 'react';
+import React, { MouseEventHandler, ReactNode } from 'react';
 import classNames from 'classnames';
 import './KouiCard.scss';
 
@@ -17,7 +17,7 @@ export type KouiCardProps = {
   title?: string;
   content?: string;
   dark?: boolean;
-  children?: any;
+  children?: ReactNode;
 };
 
 export const KouiCard: React.FC<KouiCardProps> = ({
@@ -47,7 +47,7 @@ export const KouiCard: React.FC<KouiCardProps> = ({
   return (
     <div className={cardClass} onClick={onClick}>
       {image && <img src={image} alt={'Placeholder'} />}
-      {children && <span>{children}</span>}
+      {children}
     </div>
   );
 };

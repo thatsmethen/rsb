@@ -1,47 +1,106 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap');
+
+$spacing-scale: (
+  '1': 0.25rem,
+  '2': 0.5rem,
+  '3': 0.75rem,
+  '4': 1rem,
+  '5': 1.25rem,
+  '6': 1.5rem,
+  '7': 1.75rem,
+  '8': 2rem,
+);
+
+$border-radius-scale: (
+  'none': 0,
+  'sm': 0.25rem,
+  'DEFAULT': 0.5rem,
+  'md': 0.75rem,
+  'lg': 1rem,
+  'full': 9999px,
+);
+
+$color-palette: (
+  'blue': #007bff,
+  'green': #28a745,
+  'red': #dc3545,
+  'white': #ffffff,
+  'black': #000000,
+  'grey': #6c757d,
+  'dark-grey': #343a40,
+  'light-grey': #f8f9fa,
+  'yellow': #ffc107,
+);
+
+$opacity-color-palette: (
+  'blue': rgba(0, 123, 255, 0.5),
+  'green': rgba(40, 167, 69, 0.5),
+  'red': rgba(220, 53, 69, 0.5),
+  'white': rgba(255, 255, 255, 0.5),
+  'black': rgba(0, 0, 0, 0.5),
+  'grey': rgba(108, 117, 125, 0.5),
+  'dark-grey': rgba(52, 58, 64, 0.5),
+  'light-grey': rgba(248, 249, 250, 0.5),
+  'yellow': rgba(255, 193, 7, 0.5),
+);
+
 .koui-card {
-
-  $whitespace-unit: 4px;
-  $shadow-blur-multiplier: 5px;
-  $shadow-spread-multiplier: 2px;
-  $shadow-color: rgba(0,0,0,0.5);
-
-  background: white;
+  font-family: 'Poppins', sans-serif;
   transition: all 0.3s ease-in-out;
-  padding: 2 * $whitespace-unit;
-  min-height: 10 * $whitespace-unit;
+  padding: map-get($spacing-scale, '4');
+  min-height: map-get($spacing-scale, '8');
   display: flex;
   flex-direction: column;
+  border-radius: map-get($border-radius-scale, 'DEFAULT');
   flex: 1;
 
   img {
     object-fit: contain;
-    max-height: 200px;
-    min-height: 200px;
-    width: 100%;
+    margin-bottom: 0.75rem;
+    border-radius: map-get($border-radius-scale, 'DEFAULT');
   }
 
-  &--border-xs { border-radius: 1 * $whitespace-unit; }
-  &--border-sm { border-radius: 2 * $whitespace-unit; }
-  &--border-md { border-radius: 3 * $whitespace-unit; }
-  &--border-lg { border-radius: 4 * $whitespace-unit; }
-  &--border-xl { border-radius: 5 * $whitespace-unit; }
+  &--outlined {
+    border: 1px solid map-get($color-palette, 'grey');
+  }
 
-  &--border-color-black { border-color: black; }
-  &--border-color-red { border-color: red; }
-  &--border-color-blue { border-color: blue; }
-  &--border-color-green { border-color: green; }
+  &--clickable {
+    cursor: pointer;
+    &:hover {
+      box-shadow: 0px 3px 10px rgba(0, 0, 0, 0.1);
+    }
+  }
 
-  &--shadow-sm { box-shadow: 0 0 $shadow-blur-multiplier * 1 $shadow-spread-multiplier * 1 $shadow-color; }
-  &--shadow-md { box-shadow: 0 0 $shadow-blur-multiplier * 2 $shadow-spread-multiplier * 2 $shadow-color; }
-  &--shadow-lg { box-shadow: 0 0 $shadow-blur-multiplier * 3 $shadow-spread-multiplier * 3 $shadow-color; }
+  &--dark {
+    background-color: map-get($color-palette, 'dark-grey');
+    color: map-get($color-palette, 'white');
+  }
 
-  &--background-white { background-color: white; }
-  &--background-red { background-color: red; }
-  &--background-blue { background-color: blue; }
-  &--background-green { background-color: green; }
+  &--border-color {
+    @each $color, $hex in $opacity-color-palette {
+      &-#{$color} {
+        border-color: $hex;
+      }
+    }
+  }
 
-  &--dark { background-color: #333; color: white; }
+  &--shadow {
+    &-sm {
+      box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.1);
+    }
+    &-md {
+      box-shadow: 0px 3px 10px rgba(0, 0, 0, 0.15);
+    }
+    &-lg {
+      box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.2);
+    }
+  }
 
-  &--clickable { cursor: pointer; }
-  &--outlined { border: 1px solid; }
+  &--background {
+    @each $color, $hex in $color-palette {
+      &-#{$color} {
+        background-color: $hex;
+      }
+    }
+  }
 }
