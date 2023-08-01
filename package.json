@@ -1,7 +1,7 @@
 {
   "name": "rsb",
   "version": "0.1.0",
-  "homepage": "https://github.com/thatsmethen/rsb",
+  "homepage": "https://thatsmethen.github.io/rsb/",
   "private": true,
   "dependencies": {
     "@storybook/addon-docs": "^7.1.1",
