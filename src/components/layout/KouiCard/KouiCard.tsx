@@ -4,13 +4,14 @@ import './KouiCard.scss';
 
 type BorderSize = 'xs' | 'sm' | 'md' | 'lg' | 'xl';
 type ShadowSize = 'sm' | 'md' | 'lg';
+type BackgroundColor = 'blue' | 'green' | 'red' | 'white' | 'black' | 'grey' | 'dark-grey' | 'light-grey' | 'yellow';
 
 export type KouiCardProps = {
   borderRadius?: BorderSize;
   borderColor?: string;
   shadow?: ShadowSize;
   shadowOpacity?: number;
-  backgroundColor?: string;
+  backgroundColor?: BackgroundColor;
   onClick?: MouseEventHandler<HTMLDivElement>;
   image?: string;
   outlined?: boolean;
